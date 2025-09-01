@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كتب المرحلة - المتميزون</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+  <meta name="theme-color" content="#667eea">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <div class="nav-brand">
+          <img src="../assets/images/ui/logo-main.svg" alt="شعار المتميزون" class="logo-img">
+          <div class="brand-text">
+            <span class="brand-name">المتميزون</span>
+            <span class="brand-tagline">منصتك التعليمية المجانية</span>
+          </div>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">الرئيسية</a>
+          <a href="../index.html#grades" class="nav-link">المراحل الدراسية</a>
+          <a href="../index.html#features" class="nav-link">المميزات</a>
+          <a href="../index.html#about" class="nav-link">من نحن</a>
+          <a href="../index.html#contact" class="nav-link">تواصل معنا</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="search-container-nav">
+            <input type="text" class="search-input-nav" placeholder="ابحث عن كتاب..." id="nav-search">
+            <button class="search-btn-nav" onclick="searchFromNav()">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <button class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="page-hero" style="
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0 60px;
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  ">
+    <div class="hero-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 5;">
+      <div class="section-badge" style="
+        background: rgba(255,255,255,0.2);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        margin-bottom: 20px;
+      ">
+        <i class="fas fa-graduation-cap"></i>
+        <span>كتب المرحلة</span>
+      </div>
+
+      <h1 class="section-title" id="page-title" style="
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+        line-height: 1.2;
+      ">كتب الصف</h1>
+
+      <p class="section-description" id="page-description" style="
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      ">جميع الكتب المتاحة لهذه المرحلة</p>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="search-section" style="padding: 40px 0; background: #f8f9fa;">
+    <div class="container">
+      <div class="search-box-main" style="margin-bottom: 30px;">
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="text" class="search-input-main" placeholder="ابحث في كتب هذه المرحلة..." id="main-search">
+        <button class="search-btn-main" onclick="searchBooks()">
+          <span>بحث</span>
+          <i class="fas fa-arrow-left"></i>
+        </button>
+      </div>
+
+      <!-- Quick Filters -->
+      <div class="quick-filters" style="text-align: center;">
+        <span style="color: #666; margin-left: 15px; font-weight: 600;">تصفية سريعة:</span>
+        <button class="filter-btn active" onclick="filterBooks('all')" style="
+          background: #667eea;
+          color: white;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 20px;
+          margin: 0 5px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        ">الكل</button>
+        <button class="filter-btn" onclick="filterBooks('arabic')" style="
+          background: #e9ecef;
+          color: #666;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 20px;
+          margin: 0 5px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        ">عربي</button>
+        <button class="filter-btn" onclick="filterBooks('math')" style="
+          background: #e9ecef;
+          color: #666;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 20px;
+          margin: 0 5px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        ">رياضيات</button>
+        <button class="filter-btn" onclick="filterBooks('science')" style="
+          background: #e9ecef;
+          color: #666;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 20px;
+          margin: 0 5px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        ">علوم</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books Grid -->
+  <section class="books-section" style="padding: 60px 0;">
+    <div class="container">
+      <div id="books-container">
+        <!-- سيتم إدراج الكتب هنا -->
+      </div>
+
+      <!-- Load More Button -->
+      <div id="load-more-section" style="text-align: center; margin-top: 40px; display: none;">
+        <button onclick="loadMoreBooks()" style="
+          background: #667eea;
+          color: white;
+          border: none;
+          padding: 12px 30px;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 16px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          transition: all 0.3s ease;
+        " onmouseover="this.style.background='#5a6fd8'" onmouseout="this.style.background='#667eea'">
+          <i class="fas fa-plus"></i>
+          <span>تحميل المزيد</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section" style="
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 0;
+  ">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">إحصائيات المرحلة</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: 900; margin-bottom: 10px;" id="books-count">0</div>
+          <div style="font-size: 1rem; opacity: 0.9;">كتاب متاح</div>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: 900; margin-bottom: 10px;" id="downloads-count">0</div>
+          <div style="font-size: 1rem; opacity: 0.9;">إجمالي التحميلات</div>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: 900; margin-bottom: 10px;" id="subjects-count">0</div>
+          <div style="font-size: 1rem; opacity: 0.9;">مادة دراسية</div>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: 900; margin-bottom: 10px;">4.8</div>
+          <div style="font-size: 1rem; opacity: 0.9;">تقييم المستخدمين</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Grades -->
+  <section class="related-grades" style="padding: 60px 0; background: #f8f9fa;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px; color: #333;">مراحل دراسية أخرى</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+        <!-- Grade Cards -->
+        <div class="related-grade-card" style="
+          background: white;
+          border-radius: 12px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        " onclick="window.location.href='books.html?grade=grade-2-prep'"
+          onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+          ">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4 style="color: #333; margin-bottom: 10px;">الصف الثاني الإعدادي</h4>
+          <p style="color: #666; font-size: 14px; margin-bottom: 15px;">قريباً</p>
+          <span style="
+            background: #e9ecef;
+            color: #666;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+          ">قريباً</span>
+        </div>
+
+        <div class="related-grade-card" style="
+          background: white;
+          border-radius: 12px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        " onclick="window.location.href='books.html?grade=grade-3-prep'"
+          onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #dc3545, #fd7e14);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+          ">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h4 style="color: #333; margin-bottom: 10px;">الصف الثالث الإعدادي</h4>
+          <p style="color: #666; font-size: 14px; margin-bottom: 15px;">قريباً</p>
+          <span style="
+            background: #e9ecef;
+            color: #666;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+          ">قريباً</span>
+        </div>
+
+        <div class="related-grade-card" style="
+          background: white;
+          border-radius: 12px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        " onclick="window.location.href='books.html?grade=grade-1-sec'"
+          onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #6f42c1, #e83e8c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+          ">
+            <i class="fas fa-university"></i>
+          </div>
+          <h4 style="color: #333; margin-bottom: 10px;">الصف الأول الثانوي</h4>
+          <p style="color: #666; font-size: 14px; margin-bottom: 15px;">قريباً</p>
+          <span style="
+            background: #e9ecef;
+            color: #666;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+          ">قريباً</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Button -->
+  <section style="padding: 40px 0; text-align: center;">
+    <div class="container">
+      <a href="../index.html#grades" style="
+        background: #667eea;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.background='#5a6fd8'" onmouseout="this.style.background='#667eea'">
+        <i class="fas fa-arrow-right"></i>
+        العودة للمراحل الدراسية
+      </a>
+
+      <a href="../index.html" style="
+        background: #6c757d;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.background='#5a6268'" onmouseout="this.style.background='#6c757d'">
+        <i class="fas fa-home"></i>
+        العودة للصفحة الرئيسية
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../assets/images/ui/logo-white.svg" alt="شعار المتميزون" class="footer-logo">
+          <h3>المتميزون</h3>
+          <p>منصتك المجانية لتحميل الكتب المدرسية المصرية بجودة عالية</p>
+
+          <div class="footer-social">
+            <a href="https://t.me/G5_Y5" target="_blank" class="social-link">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="mailto:info@s3cond7ry.me" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://s3cond7ry.me" target="_blank" class="social-link">
+              <i class="fas fa-globe"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="../index.html">الرئيسية</a></li>
+              <li><a href="../index.html#grades">المراحل الدراسية</a></li>
+              <li><a href="../index.html#features">المميزات</a></li>
+              <li><a href="../index.html#about">من نحن</a></li>
+              <li><a href="../index.html#contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; 2024 المتميزون. جميع الحقوق محفوظة.</p>
+          <p>تم التطوير بـ <i class="fas fa-heart" style="color: #e74c3c;"></i> في مصر</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-to-top" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="books-enhanced.js"></script>
+</body>
+
+</html>
