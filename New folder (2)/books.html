@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كتب المرحلة - المتميزون</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <meta name="theme-color" content="#667eea">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <div class="nav-brand">
+          <img src="assets/images/ui/logo-main.svg" alt="شعار المتميزون" class="logo-img">
+          <div class="brand-text">
+            <span class="brand-name">المتميزون</span>
+            <span class="brand-tagline">منصتك التعليمية المجانية</span>
+          </div>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="index.html#grades" class="nav-link">المراحل الدراسية</a>
+          <a href="index.html#features" class="nav-link">المميزات</a>
+          <a href="index.html#about" class="nav-link">من نحن</a>
+          <a href="index.html#contact" class="nav-link">تواصل معنا</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="search-container-nav">
+            <input type="text" class="search-input-nav" placeholder="ابحث عن كتاب..." id="nav-search">
+            <button class="search-btn-nav" onclick="searchFromNav()">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <button class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main style="margin-top: 80px; padding: 40px 0;">
+    <div class="container">
+      <!-- Header -->
+      <div class="books-header" style="text-align: center; margin-bottom: 40px;">
+        <div class="section-badge">
+          <i class="fas fa-books"></i>
+          <span>كتب المرحلة</span>
+        </div>
+        <h1 class="section-title" id="page-title">كتب الصف</h1>
+        <p class="section-description" id="page-description">جميع الكتب المتاحة لهذه المرحلة</p>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-box-main" style="margin-bottom: 40px;">
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="text" class="search-input-main" placeholder="ابحث في كتب هذه المرحلة..." id="main-search">
+        <button class="search-btn-main" onclick="searchBooks()">
+          <span>بحث</span>
+          <i class="fas fa-arrow-left"></i>
+        </button>
+      </div>
+
+      <!-- Books Grid -->
+      <div id="books-container">
+        <!-- سيتم إدراج الكتب هنا -->
+      </div>
+
+      <!-- Back Button -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html#grades" class="btn btn-outline">
+          <i class="fas fa-arrow-right"></i>
+          <span>العودة للمراحل الدراسية</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/images/ui/logo-white.svg" alt="شعار المتميزون" class="footer-logo">
+          <h3>المتميزون</h3>
+          <p>منصتك المجانية لتحميل الكتب المدرسية المصرية بجودة عالية</p>
+
+          <div class="footer-social">
+            <a href="https://t.me/G5_Y5" target="_blank" class="social-link">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="mailto:info@s3cond7ry.me" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://s3cond7ry.me" target="_blank" class="social-link">
+              <i class="fas fa-globe"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="index.html#grades">المراحل الدراسية</a></li>
+              <li><a href="index.html#features">المميزات</a></li>
+              <li><a href="index.html#about">من نحن</a></li>
+              <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>المراحل التعليمية</h4>
+            <ul>
+              <li><a href="books.html?grade=grade-1-prep">الأول الإعدادي</a></li>
+              <li><a href="books.html?grade=grade-2-prep">الثاني الإعدادي</a></li>
+              <li><a href="books.html?grade=grade-3-prep">الثالث الإعدادي</a></li>
+              <li><a href="books.html?grade=grade-1-sec">الأول الثانوي</a></li>
+              <li><a href="books.html?grade=grade-2-sec">الثاني الثانوي</a></li>
+              <li><a href="books.html?grade=grade-3-sec">الثالث الثانوي</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>الدعم</h4>
+            <ul>
+              <li><a href="index.html#contact">تواصل معنا</a></li>
+              <li><a href="https://t.me/G5_Y5" target="_blank">الدعم الفني</a></li>
+              <li><a href="index.html#features">الأسئلة الشائعة</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; 2024 المتميزون. جميع الحقوق محفوظة.</p>
+          <p>تم التطوير بـ <i class="fas fa-heart" style="color: #e74c3c;"></i> في مصر</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // بيانات الكتب
+    const booksData = {
+      'grade-1-prep': [
+        {
+          title: 'كتاب الامتحان في اللغة العربية',
+          subject: 'اللغة العربية',
+          term: 'الفصل الدراسي الأول',
+          size: '45 MB',
+          pages: '250 صفحة',
+          downloads: '15.2K',
+          cover: 'assets/book-covers/arabic-exam-grade1.jpg',
+          downloadUrl: '#',
+          detailsUrl: 'book-details.html' // رابط صفحة التفاصيل
+        }
+      ],
+      'grade-2-prep': [],
+      'grade-3-prep': [],
+      'grade-1-sec': [],
+      'grade-2-sec': [],
+      'grade-3-sec': []
+    };
+
+    const gradeNames = {
+      'grade-1-prep': 'الصف الأول الإعدادي',
+      'grade-2-prep': 'الصف الثاني الإعدادي',
+      'grade-3-prep': 'الصف الثالث الإعدادي',
+      'grade-1-sec': 'الصف الأول الثانوي',
+      'grade-2-sec': 'الصف الثاني الثانوي',
+      'grade-3-sec': 'الصف الثالث الثانوي'
+    };
+
+    // جلب البارامترز من الرابط
+    function getURLParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return {
+        grade: urlParams.get('grade'),
+        search: urlParams.get('search')
+      };
+    }
+
+    // إظهار الكتب
+    function displayBooks(books, searchTerm = '') {
+      const container = document.getElementById('books-container');
+
+      if (books.length === 0) {
+        container.innerHTML = `
+          <div style="
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+          ">
+            <i class="fas fa-book" style="font-size: 4rem; color: #667eea; margin-bottom: 20px; opacity: 0.5;"></i>
+            <h3 style="color: #333; margin-bottom: 15px;">لا توجد كتب متاحة حالياً</h3>
+            <p style="color: #666; margin-bottom: 20px;">
+              ${searchTerm ? `لا توجد نتائج للبحث عن: "${searchTerm}"` : 'سيتم إضافة كتب هذه المرحلة قريباً'}
+            </p>
+            <div style="margin-top: 30px;">
+              <a href="https://t.me/G5_Y5" target="_blank" style="
+                background: #667eea;
+                color: white;
+                padding: 12px 25px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 14px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+              ">
+                <i class="fab fa-telegram"></i>
+                تابعنا للتحديثات
+              </a>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const booksHTML = books.map(book => `
+        <div style="
+          background: white;
+          border-radius: 12px;
+          padding: 25px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+          margin-bottom: 20px;
+          transition: all 0.3s ease;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)'">
+          
+          <div style="display: flex; gap: 20px; align-items: center;">
+            <div style="
+              width: 80px;
+              height: 100px;
+              background: linear-gradient(45deg, #667eea, #764ba2);
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-size: 2rem;
+              flex-shrink: 0;
+            ">
+              <i class="fas fa-book"></i>
+            </div>
+            
+            <div style="flex: 1;">
+              <h3 style="margin: 0 0 10px 0; color: #333; font-size: 1.2rem;">${book.title}</h3>
+              
+              <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 10px 0; font-size: 14px; color: #666;">
+                <span><i class="fas fa-bookmark" style="color: #667eea;"></i> ${book.subject}</span>
+                <span><i class="fas fa-calendar" style="color: #667eea;"></i> ${book.term}</span>
+              </div>
+              
+              <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 10px 0; font-size: 12px; color: #888;">
+                <span><i class="fas fa-file"></i> ${book.pages}</span>
+                <span><i class="fas fa-download"></i> ${book.downloads}</span>
+                <span><i class="fas fa-hdd"></i> ${book.size}</span>
+              </div>
+              
+              <button onclick="downloadBook('${book.title}')" style="
+                background: #667eea;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+                margin-top: 10px;
+                margin-left: 10px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+              " onmouseover="this.style.background='#5a6fd8'" onmouseout="this.style.background='#667eea'">
+                <i class="fas fa-download"></i>
+                تحميل الكتاب
+              </button>
+              
+              ${book.detailsUrl ? `
+              <button onclick="viewBookDetails('${book.detailsUrl}')" style="
+                background: #28a745;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+                margin-top: 10px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+              " onmouseover="this.style.background='#218838'" onmouseout="this.style.background='#28a745'">
+                <i class="fas fa-eye"></i>
+                عرض التفاصيل
+              </button>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div style="
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        ">
+          ${booksHTML}
+        </div>
+      `;
+    }
+
+    // عرض تفاصيل الكتاب
+    function viewBookDetails(detailsUrl) {
+      window.location.href = detailsUrl;
+    }
+
+    // تحميل كتاب
+    function downloadBook(bookTitle) {
+      alert(`تحميل كتاب: ${bookTitle}\n\nعذراً، الرابط غير متاح حالياً.\nالكتاب قيد الرفع وسيكون متاحاً قريباً.\n\nتابعنا على التليجرام للتحديثات: @G5_Y5`);
+    }
+
+    // البحث
+    function searchBooks() {
+      const searchTerm = document.getElementById('main-search').value.trim();
+      const params = getURLParams();
+
+      if (searchTerm) {
+        // تحديث الرابط
+        window.history.pushState(null, '', `books.html?grade=${params.grade}&search=${encodeURIComponent(searchTerm)}`);
+
+        // البحث في الكتب
+        const books = booksData[params.grade] || [];
+        const filteredBooks = books.filter(book =>
+          book.title.includes(searchTerm) ||
+          book.subject.includes(searchTerm)
+        );
+
+        displayBooks(filteredBooks, searchTerm);
+
+        // تحديث العنوان
+        document.getElementById('page-description').textContent = `نتائج البحث عن: "${searchTerm}"`;
+      }
+    }
+
+    // البحث من النافبار
+    function searchFromNav() {
+      const searchTerm = document.getElementById('nav-search').value.trim();
+      if (searchTerm) {
+        document.getElementById('main-search').value = searchTerm;
+        searchBooks();
+      }
+    }
+
+    // تهيئة الصفحة
+    function initializePage() {
+      const params = getURLParams();
+
+      if (params.grade && gradeNames[params.grade]) {
+        // تحديث العنوان
+        document.getElementById('page-title').textContent = `كتب ${gradeNames[params.grade]}`;
+        document.getElementById('page-description').textContent = `جميع الكتب المتاحة للصف ${gradeNames[params.grade]}`;
+
+        // جلب الكتب
+        const books = booksData[params.grade] || [];
+
+        if (params.search) {
+          // البحث
+          const filteredBooks = books.filter(book =>
+            book.title.includes(params.search) ||
+            book.subject.includes(params.search)
+          );
+          displayBooks(filteredBooks, params.search);
+          document.getElementById('main-search').value = params.search;
+          document.getElementById('page-description').textContent = `نتائج البحث عن: "${params.search}"`;
+        } else {
+          // عرض جميع الكتب
+          displayBooks(books);
+        }
+      } else {
+        // صفحة خطأ
+        document.getElementById('page-title').textContent = 'صفحة غير موجودة';
+        document.getElementById('page-description').textContent = 'المرحلة المطلوبة غير موجودة';
+        document.getElementById('books-container').innerHTML = `
+          <div style="text-align: center; padding: 60px 20px;">
+            <h3>عذراً، الصفحة غير موجودة</h3>
+            <p>يرجى العودة للصفحة الرئيسية واختيار المرحلة المناسبة</p>
+            <a href="index.html" class="btn btn-primary" style="margin-top: 20px;">
+              العودة للرئيسية
+            </a>
+          </div>
+        `;
+      }
+    }
+
+    // تشغيل النافبار
+    function setupNavigation() {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
+      }
+
+      // النافبار الثابت
+      window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+    }
+
+    // تشغيل الصفحة
+    document.addEventListener('DOMContentLoaded', () => {
+      initializePage();
+      setupNavigation();
+
+      // Enter key للبحث
+      document.getElementById('main-search').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          searchBooks();
+        }
+      });
+
+      document.getElementById('nav-search').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          searchFromNav();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

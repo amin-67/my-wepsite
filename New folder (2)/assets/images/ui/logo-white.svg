@@ -1,0 +1,98 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- التدرج الأبيض -->
+        <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff"/>
+            <stop offset="100%" style="stop-color:#f8f9fa"/>
+        </linearGradient>
+        
+        <!-- التدرج الذهبي الفاتح -->
+        <linearGradient id="lightGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffd89b"/>
+            <stop offset="100%" style="stop-color:#ffeaa7"/>
+        </linearGradient>
+        
+        <!-- ظل أبيض -->
+        <filter id="whiteShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(255,255,255,0.8)"/>
+        </filter>
+        
+        <!-- توهج أبيض -->
+        <filter id="whiteGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3"/>
+            <feColorMatrix values="1 0 0 0 1  0 1 0 0 1  0 0 1 0 1  0 0 0 1 0"/>
+        </filter>
+    </defs>
+    
+    <!-- دائرة الخلفية -->
+    <circle cx="256" cy="256" r="240" fill="rgba(255,255,255,0.1)"/>
+    
+    <!-- الكتاب الرئيسي -->
+    <g transform="translate(256, 200)">
+        <!-- غلاف الكتاب الخلفي -->
+        <rect x="-80" y="-60" width="160" height="120" rx="10" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="2"/>
+        
+        <!-- صفحات الكتاب -->
+        <rect x="-75" y="-55" width="150" height="110" rx="8" fill="white" opacity="0.95"/>
+        
+        <!-- خط الوسط -->
+        <line x1="0" y1="-55" x2="0" y2="55" stroke="url(#lightGoldGradient)" stroke-width="3"/>
+        
+        <!-- خطوط النص -->
+        <g opacity="0.8">
+            <line x1="-60" y1="-30" x2="0" y2="-30" stroke="rgba(255,255,255,0.8)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="-50" y1="-15" x2="-10" y2="-15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="-65" y1="0" x2="-5" y2="0" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+            
+            <line x1="10" y1="-30" x2="60" y2="-30" stroke="rgba(255,255,255,0.8)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="15" y1="-15" x2="55" y2="-15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="5" y1="0" x2="65" y2="0" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        
+        <!-- نجمة التميز -->
+        <g transform="translate(0, 25)">
+            <path d="M 0 -15 L 4.5 -4.5 L 15 -4.5 L 7.5 3 L 12 15 L 0 9 L -12 15 L -7.5 3 L -15 -4.5 L -4.5 -4.5 Z" 
+                  fill="url(#lightGoldGradient)" 
+                  filter="url(#whiteGlow)"/>
+        </g>
+    </g>
+    
+    <!-- العنوان "المتميزون" -->
+    <g transform="translate(256, 320)">
+        <text x="0" y="0" 
+              font-family="Cairo, Arial, sans-serif" 
+              font-size="48" 
+              font-weight="800" 
+              text-anchor="middle" 
+              fill="white"
+              filter="url(#whiteShadow)">
+            المتميزون
+        </text>
+    </g>
+    
+    <!-- الشعار الفرعي -->
+    <g transform="translate(256, 360)">
+        <text x="0" y="0" 
+              font-family="Cairo, Arial, sans-serif" 
+              font-size="18" 
+              font-weight="600" 
+              text-anchor="middle" 
+              fill="rgba(255,255,255,0.9)">
+            منصتك التعليمية المجانية
+        </text>
+    </g>
+    
+    <!-- عناصر تزيينية -->
+    <g opacity="0.5">
+        <circle cx="120" cy="120" r="8" fill="white"/>
+        <circle cx="392" cy="120" r="6" fill="white"/>
+        <circle cx="120" cy="392" r="10" fill="white"/>
+        <circle cx="392" cy="392" r="7" fill="white"/>
+    </g>
+    
+    <!-- خطوط تزيينية -->
+    <g opacity="0.3">
+        <path d="M 80 80 Q 256 60 432 80" stroke="white" stroke-width="2" fill="none"/>
+        <path d="M 80 432 Q 256 452 432 432" stroke="white" stroke-width="2" fill="none"/>
+    </g>
+</svg>

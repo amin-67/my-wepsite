@@ -1,0 +1,90 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grade1SecBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f093fb"/>
+            <stop offset="100%" style="stop-color:#f5576c"/>
+        </linearGradient>
+        
+        <linearGradient id="book1SecGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#667eea"/>
+            <stop offset="100%" style="stop-color:#764ba2"/>
+        </linearGradient>
+        
+        <filter id="shadow1Sec" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.3)"/>
+        </filter>
+    </defs>
+    
+    <!-- الخلفية -->
+    <rect width="400" height="300" fill="url(#grade1SecBg)"/>
+    
+    <!-- نمط هندسي متقدم -->
+    <g opacity="0.15">
+        <polygon points="40,40 70,30 100,40 90,70 60,80 30,70" fill="white"/>
+        <polygon points="320,200 360,180 380,220 340,240 300,220" fill="white"/>
+        <circle cx="330" cy="60" r="25" fill="white"/>
+        <rect x="60" y="200" width="40" height="40" rx="8" fill="white" transform="rotate(45 80 220)"/>
+    </g>
+    
+    <!-- كتب ثانوية متقدمة -->
+    <g transform="translate(200, 140)">
+        <!-- كتاب فيزياء -->
+        <g transform="rotate(-12)">
+            <rect x="-50" y="-40" width="100" height="80" rx="8" fill="url(#book1SecGrad)" filter="url(#shadow1Sec)"/>
+            <rect x="-45" y="-35" width="90" height="70" rx="6" fill="white" opacity="0.95"/>
+            <text x="0" y="-15" font-family="Cairo, Arial" font-size="14" text-anchor="middle" fill="url(#book1SecGrad)" font-weight="bold">فيزياء</text>
+            <text x="0" y="0" font-family="Arial" font-size="20" text-anchor="middle" fill="url(#book1SecGrad)">E=mc²</text>
+            <line x1="-30" y1="15" x2="30" y2="15" stroke="url(#book1SecGrad)" stroke-width="2"/>
+        </g>
+        
+        <!-- كتاب كيمياء -->
+        <g transform="rotate(8) translate(20, -15)">
+            <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#4facfe" filter="url(#shadow1Sec)"/>
+            <rect x="-35" y="-25" width="70" height="50" rx="4" fill="white" opacity="0.9"/>
+            <text x="0" y="-5" font-family="Cairo, Arial" font-size="12" text-anchor="middle" fill="#4facfe" font-weight="bold">كيمياء</text>
+            <text x="0" y="10" font-family="Arial" font-size="16" text-anchor="middle" fill="#4facfe">H₂O</text>
+        </g>
+        
+        <!-- آلة حاسبة علمية -->
+        <g transform="translate(40, 25)">
+            <rect x="0" y="0" width="25" height="35" rx="3" fill="#2d3748" filter="url(#shadow1Sec)"/>
+            <rect x="2" y="2" width="21" height="8" rx="1" fill="#4a5568"/>
+            <g fill="#e2e8f0">
+                <circle cx="6" cy="15" r="1.5"/>
+                <circle cx="12" cy="15" r="1.5"/>
+                <circle cx="18" cy="15" r="1.5"/>
+                <circle cx="6" cy="21" r="1.5"/>
+                <circle cx="12" cy="21" r="1.5"/>
+                <circle cx="18" cy="21" r="1.5"/>
+                <circle cx="6" cy="27" r="1.5"/>
+                <circle cx="12" cy="27" r="1.5"/>
+                <circle cx="18" cy="27" r="1.5"/>
+            </g>
+        </g>
+    </g>
+    
+    <!-- رقم المرحلة -->
+    <g transform="translate(60, 80)">
+        <circle cx="0" cy="0" r="32" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="3"/>
+        <text x="0" y="8" font-family="Cairo, Arial" font-size="38" font-weight="bold" text-anchor="middle" fill="white">١</text>
+        <text x="0" y="-15" font-family="Cairo, Arial" font-size="12" text-anchor="middle" fill="white">ثانوي</text>
+    </g>
+    
+    <!-- النص -->
+    <g transform="translate(200, 240)">
+        <text x="0" y="0" font-family="Cairo, Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="white">
+            الصف الأول الثانوي
+        </text>
+        <text x="0" y="25" font-family="Cairo, Arial" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.9)">
+            دخول عالم العلوم المتقدمة
+        </text>
+    </g>
+    
+    <!-- رموز علمية -->
+    <g opacity="0.4" fill="white" font-family="Arial">
+        <text x="70" y="190" font-size="16">∞</text>
+        <text x="320" y="120" font-size="18">Σ</text>
+        <text x="340" y="260" font-size="14">∫</text>
+        <text x="90" y="250" font-size="12">α</text>
+    </g>
+</svg>

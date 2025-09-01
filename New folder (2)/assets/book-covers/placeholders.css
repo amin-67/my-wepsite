@@ -1,0 +1,43 @@
+/* Placeholder for book cover images - Create actual images in production */
+.book-stack-item img {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+.book-stack-item.book-1 img {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.book-stack-item.book-2 img {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.book-stack-item.book-3 img {
+  background: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%);
+}
+
+.book-stack-item img::before {
+  content: '\f02d';
+  /* Font Awesome book icon */
+}
+
+.book-stack-item.book-1 img::before {
+  content: '\f518';
+  /* Font Awesome language icon */
+}
+
+.book-stack-item.book-2 img::before {
+  content: '\f1ec';
+  /* Font Awesome calculator icon */
+}
+
+.book-stack-item.book-3 img::before {
+  content: '\f0c3';
+  /* Font Awesome flask icon */
+}

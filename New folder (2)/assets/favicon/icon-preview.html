@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أيقونة موقع المتميزون - تصميم SVG</title>
+  <style>
+    body {
+      font-family: 'Cairo', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .icon-container {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .icon-preview {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .size-demo {
+      text-align: center;
+    }
+
+    .size-label {
+      color: #666;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .instructions {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 600px;
+      text-align: right;
+    }
+
+    .instructions h3 {
+      color: #ffd89b;
+      margin-bottom: 15px;
+    }
+
+    .instructions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .instructions li {
+      margin: 10px 0;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .path-highlight {
+      background: rgba(255, 215, 155, 0.3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #ffd89b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="icon-container">
+    <h2 style="color: #333; margin-bottom: 20px;">أيقونة موقع المتميزون</h2>
+
+    <div class="icon-preview">
+      <div class="size-demo">
+        <svg width="16" height="16" viewBox="0 0 512 512">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea" />
+              <stop offset="100%" style="stop-color:#764ba2" />
+            </linearGradient>
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd89b" />
+              <stop offset="100%" style="stop-color:#19547b" />
+            </linearGradient>
+          </defs>
+
+          <!-- الخلفية الرئيسية -->
+          <rect width="512" height="512" rx="80" fill="url(#grad1)" />
+
+          <!-- الكتاب المفتوح -->
+          <path d="M128 160 L256 140 L384 160 L384 360 L256 340 L128 360 Z" fill="white" opacity="0.9" />
+
+          <!-- صفحات الكتاب -->
+          <line x1="256" y1="140" x2="256" y2="340" stroke="url(#grad2)" stroke-width="3" />
+
+          <!-- خطوط النص -->
+          <line x1="160" y1="180" x2="240" y2="180" stroke="url(#grad1)" stroke-width="4" opacity="0.7" />
+          <line x1="160" y1="200" x2="230" y2="200" stroke="url(#grad1)" stroke-width="3" opacity="0.6" />
+          <line x1="160" y1="220" x2="240" y2="220" stroke="url(#grad1)" stroke-width="3" opacity="0.6" />
+
+          <line x1="270" y1="180" x2="350" y2="180" stroke="url(#grad1)" stroke-width="4" opacity="0.7" />
+          <line x1="280" y1="200" x2="350" y2="200" stroke="url(#grad1)" stroke-width="3" opacity="0.6" />
+          <line x1="270" y1="220" x2="340" y2="220" stroke="url(#grad1)" stroke-width="3" opacity="0.6" />
+
+          <!-- نجمة التميز -->
+          <path d="M256 260 L268 284 L296 284 L274 302 L282 330 L256 314 L230 330 L238 302 L216 284 L244 284 Z"
+            fill="url(#grad2)" opacity="0.8" />
+
+          <!-- دائرة صغيرة للتزيين -->
+          <circle cx="256" cy="380" r="8" fill="white" opacity="0.6" />
+        </svg>
+        <div class="size-label">16x16</div>
+      </div>
+
+      <div class="size-demo">
+        <svg width="32" height="32" viewBox="0 0 512 512">
+          <defs>
+            <linearGradient id="grad1-32" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea" />
+              <stop offset="100%" style="stop-color:#764ba2" />
+            </linearGradient>
+            <linearGradient id="grad2-32" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd89b" />
+              <stop offset="100%" style="stop-color:#19547b" />
+            </linearGradient>
+          </defs>
+
+          <rect width="512" height="512" rx="80" fill="url(#grad1-32)" />
+          <path d="M128 160 L256 140 L384 160 L384 360 L256 340 L128 360 Z" fill="white" opacity="0.9" />
+          <line x1="256" y1="140" x2="256" y2="340" stroke="url(#grad2-32)" stroke-width="3" />
+          <line x1="160" y1="180" x2="240" y2="180" stroke="url(#grad1-32)" stroke-width="4" opacity="0.7" />
+          <line x1="160" y1="200" x2="230" y2="200" stroke="url(#grad1-32)" stroke-width="3" opacity="0.6" />
+          <line x1="160" y1="220" x2="240" y2="220" stroke="url(#grad1-32)" stroke-width="3" opacity="0.6" />
+          <line x1="270" y1="180" x2="350" y2="180" stroke="url(#grad1-32)" stroke-width="4" opacity="0.7" />
+          <line x1="280" y1="200" x2="350" y2="200" stroke="url(#grad1-32)" stroke-width="3" opacity="0.6" />
+          <line x1="270" y1="220" x2="340" y2="220" stroke="url(#grad1-32)" stroke-width="3" opacity="0.6" />
+          <path d="M256 260 L268 284 L296 284 L274 302 L282 330 L256 314 L230 330 L238 302 L216 284 L244 284 Z"
+            fill="url(#grad2-32)" opacity="0.8" />
+          <circle cx="256" cy="380" r="8" fill="white" opacity="0.6" />
+        </svg>
+        <div class="size-label">32x32</div>
+      </div>
+
+      <div class="size-demo">
+        <svg width="64" height="64" viewBox="0 0 512 512">
+          <defs>
+            <linearGradient id="grad1-64" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea" />
+              <stop offset="100%" style="stop-color:#764ba2" />
+            </linearGradient>
+            <linearGradient id="grad2-64" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd89b" />
+              <stop offset="100%" style="stop-color:#19547b" />
+            </linearGradient>
+          </defs>
+
+          <rect width="512" height="512" rx="80" fill="url(#grad1-64)" />
+          <path d="M128 160 L256 140 L384 160 L384 360 L256 340 L128 360 Z" fill="white" opacity="0.9" />
+          <line x1="256" y1="140" x2="256" y2="340" stroke="url(#grad2-64)" stroke-width="3" />
+          <line x1="160" y1="180" x2="240" y2="180" stroke="url(#grad1-64)" stroke-width="4" opacity="0.7" />
+          <line x1="160" y1="200" x2="230" y2="200" stroke="url(#grad1-64)" stroke-width="3" opacity="0.6" />
+          <line x1="160" y1="220" x2="240" y2="220" stroke="url(#grad1-64)" stroke-width="3" opacity="0.6" />
+          <line x1="270" y1="180" x2="350" y2="180" stroke="url(#grad1-64)" stroke-width="4" opacity="0.7" />
+          <line x1="280" y1="200" x2="350" y2="200" stroke="url(#grad1-64)" stroke-width="3" opacity="0.6" />
+          <line x1="270" y1="220" x2="340" y2="220" stroke="url(#grad1-64)" stroke-width="3" opacity="0.6" />
+          <path d="M256 260 L268 284 L296 284 L274 302 L282 330 L256 314 L230 330 L238 302 L216 284 L244 284 Z"
+            fill="url(#grad2-64)" opacity="0.8" />
+          <circle cx="256" cy="380" r="8" fill="white" opacity="0.6" />
+        </svg>
+        <div class="size-label">64x64</div>
+      </div>
+
+      <div class="size-demo">
+        <svg width="128" height="128" viewBox="0 0 512 512">
+          <defs>
+            <linearGradient id="grad1-128" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea" />
+              <stop offset="100%" style="stop-color:#764ba2" />
+            </linearGradient>
+            <linearGradient id="grad2-128" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd89b" />
+              <stop offset="100%" style="stop-color:#19547b" />
+            </linearGradient>
+          </defs>
+
+          <rect width="512" height="512" rx="80" fill="url(#grad1-128)" />
+          <path d="M128 160 L256 140 L384 160 L384 360 L256 340 L128 360 Z" fill="white" opacity="0.9" />
+          <line x1="256" y1="140" x2="256" y2="340" stroke="url(#grad2-128)" stroke-width="3" />
+          <line x1="160" y1="180" x2="240" y2="180" stroke="url(#grad1-128)" stroke-width="4" opacity="0.7" />
+          <line x1="160" y1="200" x2="230" y2="200" stroke="url(#grad1-128)" stroke-width="3" opacity="0.6" />
+          <line x1="160" y1="220" x2="240" y2="220" stroke="url(#grad1-128)" stroke-width="3" opacity="0.6" />
+          <line x1="270" y1="180" x2="350" y2="180" stroke="url(#grad1-128)" stroke-width="4" opacity="0.7" />
+          <line x1="280" y1="200" x2="350" y2="200" stroke="url(#grad1-128)" stroke-width="3" opacity="0.6" />
+          <line x1="270" y1="220" x2="340" y2="220" stroke="url(#grad1-128)" stroke-width="3" opacity="0.6" />
+          <path d="M256 260 L268 284 L296 284 L274 302 L282 330 L256 314 L230 330 L238 302 L216 284 L244 284 Z"
+            fill="url(#grad2-128)" opacity="0.8" />
+          <circle cx="256" cy="380" r="8" fill="white" opacity="0.6" />
+        </svg>
+        <div class="size-label">128x128</div>
+      </div>
+    </div>
+
+    <p style="color: #666; margin: 0;">
+      أيقونة احترافية بتدرج لوني جميل وتصميم كتاب مفتوح مع نجمة التميز
+    </p>
+  </div>
+
+  <div class="instructions">
+    <h3>📍 مكان الأيقونات في الموقع:</h3>
+    <ul>
+      <li>المجلد الرئيسي: <span class="path-highlight">assets/favicon/</span></li>
+      <li>الأيقونة الأساسية: <span class="path-highlight">favicon.ico</span></li>
+      <li>أيقونة 16x16: <span class="path-highlight">favicon-16x16.png</span></li>
+      <li>أيقونة 32x32: <span class="path-highlight">favicon-32x32.png</span></li>
+      <li>أيقونة Apple: <span class="path-highlight">apple-touch-icon-180x180.png</span></li>
+      <li>أيقونة Android: <span class="path-highlight">android-chrome-192x192.png</span></li>
+    </ul>
+
+    <h3>🔄 كيفية تبديل الأيقونة:</h3>
+    <ul>
+      <li>🎨 صمم أيقونتك الجديدة (512x512 بكسل)</li>
+      <li>🔗 استخدم موقع <strong>realfavicongenerator.net</strong></li>
+      <li>📥 حمل جميع الأحجام المطلوبة</li>
+      <li>📁 استبدل الملفات في مجلد <span class="path-highlight">assets/favicon/</span></li>
+      <li>✅ احتفظ بنفس أسماء الملفات</li>
+    </ul>
+  </div>
+</body>
+
+</html>
